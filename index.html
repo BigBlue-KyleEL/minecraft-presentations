@@ -48,18 +48,14 @@ section{padding:2.9rem 0 0}
 .ask h2{color:var(--gold)}.ask p:last-child{margin-bottom:0}
 footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);text-align:center;color:var(--bone-dim);font-size:.84rem;font-style:italic}
 .eye-lid{transform-origin:200px 60px;animation:open 1.5s cubic-bezier(.2,.8,.2,1) .3s both}
-.eye-lid.blinking{animation:blink 10s step-end infinite}
+.eye-lid.blinking{animation:blink 10s linear infinite}
 .glow{animation:kindle 2s ease-out .9s both}
 @keyframes open{from{transform:scaleY(1)}to{transform:scaleY(0)}}
 @keyframes blink{
-  0%{transform:scaleY(0)}
-  1.5%{transform:scaleY(1)}
-  3%{transform:scaleY(0)}
-  5%{transform:scaleY(1)}
-  6.5%{transform:scaleY(0)}
-  43%{transform:scaleY(1)}
-  44.5%{transform:scaleY(0)}
-  100%{transform:scaleY(0)}
+  0%,2.5%,6.5%,44.5%,100%{transform:scaleY(0)}
+  1%,5%,43%{transform:scaleY(1)}
+  4%{transform:scaleY(0)}
+  42%{transform:scaleY(0)}
 }
 @keyframes kindle{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){.eye-lid{animation:none;transform:scaleY(0)}.eye-lid.blinking{animation:none}.glow{animation:none;opacity:1}}
