@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An Edict of House of EL — The Crossing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--void:#120a1f;--veil:#1c1030;--panel:#221440;--royal:#6b3fa0;--sigil:#a97cf0;--gold:#e0b344;--gold-dim:#8d6f2c;--bone:#f2ead9;--bone-dim:#b9ae9a;--rust:#c96b57;--edge:#3a2560}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--void);color:var(--bone);font-family:Spectral,Georgia,serif;font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(115% 70% at 50% 0%,rgba(169,124,240,.20),transparent 62%),radial-gradient(80% 50% at 100% 35%,rgba(224,179,68,.07),transparent 60%)}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{position:relative;z-index:1;max-width:40rem;margin:0 auto;padding:0 1.3rem 4rem}
+.slogan{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;line-height:.92;letter-spacing:.005em;margin:0;text-transform:uppercase;text-wrap:balance}
+h1.slogan{font-size:clamp(3.4rem,15vw,5.6rem)}h2.slogan{font-size:clamp(2rem,8vw,2.9rem);margin-bottom:.7rem}
+h3{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:700;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em;line-height:1;margin:0 0 .2rem}
+p{margin:0 0 1.1rem}strong{font-weight:600;color:#fff}
+.liturgy{font-family:"Big Shoulders Display",sans-serif;font-weight:500;letter-spacing:.34em;text-transform:uppercase;font-size:.82rem;color:var(--gold)}
+.poster{text-align:center;padding:3rem 0 2.6rem;border-bottom:3px double var(--edge)}
+.sigil{width:min(20rem,74vw);height:auto;margin:1.4rem auto .6rem;display:block}
+.hero-sub{font-size:1.22rem;color:var(--bone-dim);max-width:24rem;margin:.9rem auto 0;font-style:italic}
+.roster{margin-top:2rem;padding-top:1.1rem;border-top:1px solid var(--edge);font-size:.83rem;color:var(--bone-dim);letter-spacing:.04em}
+.roster b{color:var(--gold);font-weight:500}
+section{padding:2.9rem 0 0}
+.banner{border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);padding:1.1rem 0;margin:2.9rem 0 0;text-align:center}
+.banner h2{margin-bottom:0;color:var(--gold)}
+.duty{border:2px solid var(--gold-dim);background:linear-gradient(180deg,var(--panel),var(--veil));padding:1.5rem 1.3rem;margin:1.5rem 0;text-align:center}
+.duty .step{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:1.5rem;line-height:1.12;text-transform:uppercase;color:#fff;margin:0}
+.addr{margin-top:1rem;border:1px dashed var(--edge);padding:.6rem .8rem;font-size:.92rem;color:var(--sigil);letter-spacing:.05em}
+.gain{display:grid;grid-template-columns:2.4rem 1fr;gap:0 .85rem;margin:0 0 1.75rem}
+.gain .glyph{font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:1.9rem;color:var(--royal);line-height:1;text-align:center;padding-top:.1rem}
+.gain h3{color:var(--bone)}.gain p{margin:0;color:var(--bone-dim);font-size:.98rem}
+.tag{display:inline-block;font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:.72rem;letter-spacing:.14em;color:var(--void);background:var(--gold);padding:.08rem .45rem;vertical-align:.14em;margin-left:.35rem}
+.warn{border-left:4px solid var(--rust);background:rgba(201,107,87,.07);padding:1.1rem 1.1rem 1.1rem 1.15rem;margin:1.4rem 0}
+.warn p:last-child{margin-bottom:0}
+.ledger{list-style:none;margin:1.2rem 0 0;padding:0}
+.ledger li{display:flex;gap:.8rem;padding:.55rem 0;border-bottom:1px solid var(--edge);font-size:.98rem}
+.ledger li:last-child{border-bottom:0}
+.mk{flex:none;width:1.2rem;font-weight:700;font-family:"Big Shoulders Display",sans-serif;font-size:1.25rem;line-height:1.3}
+.yes .mk{color:var(--sigil)}.no .mk{color:var(--rust)}
+.cost{margin:0 0 1.5rem}.cost h3{color:var(--rust);font-size:1.25rem}.cost p{margin:0;color:var(--bone-dim);font-size:.98rem}
+.teaser{margin:3rem 0 0;padding:2.2rem 1.2rem;text-align:center;border:2px solid var(--edge);background:radial-gradient(80% 130% at 50% 0%,rgba(169,124,240,.16),transparent 70%)}
+.teaser h2{color:var(--sigil);margin-bottom:.5rem}.teaser p{margin:0;color:var(--bone-dim);font-style:italic}
+.ask{margin-top:2.9rem;border:2px solid var(--gold-dim);padding:1.6rem 1.3rem;background:linear-gradient(180deg,var(--panel),transparent)}
+.ask h2{color:var(--gold)}.ask p:last-child{margin-bottom:0}
+footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);text-align:center;color:var(--bone-dim);font-size:.84rem;font-style:italic}
+.eye-lid{transform-origin:200px 60px;animation:open 1.5s cubic-bezier(.2,.8,.2,1) .3s both}
+.glow{animation:kindle 2s ease-out .9s both}
+@keyframes open{from{transform:scaleY(1)}to{transform:scaleY(0)}}
+@keyframes kindle{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.eye-lid{animation:none;transform:scaleY(0)}.glow{animation:none;opacity:1}}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="poster">
+  <p class="liturgy">An Edict of House of EL</p>
+  <svg class="sigil" viewBox="0 -50 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Eye of Om'EL above a blocky hand pointing outward">
+    <defs><radialGradient id="halo" cx="50%" cy="26%" r="55%"><stop offset="0%" stop-color="#a97cf0" stop-opacity=".5"/><stop offset="100%" stop-color="#a97cf0" stop-opacity="0"/></radialGradient></defs>
+    <circle cx="200" cy="92" r="130" fill="url(#halo)"/>
+    <circle cx="200" cy="92" r="86" fill="none" stroke="#6b3fa0" stroke-width="2" stroke-dasharray="5 9"/>
+    <circle cx="200" cy="92" r="102" fill="none" stroke="#8d6f2c" stroke-width="1"/>
+    <g class="glow"><path d="M132 60 Q200 6 268 60 Q200 114 132 60 Z" fill="#1c1030" stroke="#e0b344" stroke-width="3"/><circle cx="200" cy="60" r="22" fill="#6b3fa0"/><circle cx="200" cy="60" r="10" fill="#120a1f"/><circle cx="193" cy="52" r="4" fill="#f2ead9" opacity=".85"/></g>
+    <path class="eye-lid" d="M126 8 h148 v106 h-148 Z" fill="#120a1f"/>
+    <rect x="168" y="196" width="64" height="26" fill="#3a2560"/><rect x="160" y="216" width="80" height="30" fill="#4a2f79"/><rect x="150" y="240" width="100" height="20" fill="#e0b344"/>
+    <rect x="146" y="258" width="108" height="66" fill="#6b3fa0"/><rect x="146" y="258" width="108" height="10" fill="#8257bd"/>
+    <line x1="174" y1="268" x2="174" y2="324" stroke="#4a2f79" stroke-width="3"/><line x1="202" y1="268" x2="202" y2="324" stroke="#4a2f79" stroke-width="3"/><line x1="230" y1="268" x2="230" y2="324" stroke="#4a2f79" stroke-width="3"/>
+    <rect x="176" y="236" width="48" height="52" fill="#8257bd" stroke="#120a1f" stroke-width="3"/><rect x="176" y="236" width="48" height="12" fill="#a97cf0"/>
+  </svg>
+  <h1 class="slogan">Om'EL<br>wants you</h1>
+  <p class="hero-sub">Our world is crossing over. You are not going anywhere.</p>
+  <p class="roster">Issued to <b>Narashi</b> · <b>wv-FalapaDieu</b> · <b>KyutiCorgi</b> · <b>Miriyoku</b> · <b>GaboOo</b></p>
+</div>
+<section>
+  <h2 class="slogan">The plain version</h2>
+  <p>We play on a Realm. A Realm is a world Microsoft keeps switched on for us, and that is the whole of what it can ever be.</p>
+  <p>I want to move our world onto a server I run instead. It can do things a Realm structurally cannot — protect your builds properly, roll back disasters, reshape terrain in minutes, and hand you blueprints for anything you want to build.</p>
+  <p><strong>You stay on Bedrock.</strong> Same phone, same PC, same account, same skin, same world, same people. You are not buying Minecraft Java and you will never see it.</p>
+</section>
+<div class="banner"><h2 class="slogan">Your one duty</h2></div>
+<section style="padding-top:1.4rem">
+  <div class="duty">
+    <p class="step">Open Minecraft → Servers → Add Server → paste the address. Once.</p>
+    <div class="addr">[server address goes here]</div>
+  </div>
+  <p>That is the entire list. It sits in your server list from then on, exactly where the Realm sits now. Nothing to buy. Nothing to install. No new app.</p>
+</section>
+<div class="banner"><h2 class="slogan">What the House gains</h2></div>
+<section style="padding-top:1.6rem">
+  <div class="gain"><div class="glyph">▦</div><div><h3>Blueprints anyone can follow<span class="tag">in testing</span></h3><p>Ask for something and I send you a blueprint of it — a full-size ghost you walk inside and follow block by block, with a materials list attached and wrong blocks highlighted as you go. You build it. I just hand you the plans.</p></div></div>
+  <div class="gain"><div class="glyph">⛰</div><div><h3>The land itself can be reshaped</h3><p>Flattening a build site, carving a valley, clearing a forest, terraforming a whole coastline. Minutes instead of a weekend. Tell me where and what.</p></div></div>
+  <div class="gain"><div class="glyph">⛨</div><div><h3>Your hall is yours alone</h3><p>Right now the Realm is "everyone can do anything to anything." I can set real protected ground, so nobody takes or breaks your things — deliberately or by accident.</p></div></div>
+  <div class="gain"><div class="glyph">↺</div><div><h3>Nothing is truly lost</h3><p>Proper backups I can roll the world back to. If something gets destroyed, it returns.</p></div></div>
+  <div class="gain"><div class="glyph">✦</div><div><h3>Free packs, maps and worlds</h3><p>The whole community library, outside the Marketplace and its prices.</p></div></div>
+  <div class="gain"><div class="glyph">✧</div><div><h3>The world answers to us</h3><p>Where everyone spawns, how far the world stretches, the difficulty, the rules, who gets let in, and how many of us there can be. And if we ever want the feeling of a first morning in an unknown world again, I can move the spawn a hundred thousand blocks out and we begin again in land nobody has ever walked — with everything we have built still standing, a long journey behind us.</p></div></div>
+  <div style="margin:1.5rem 0;border-radius:6px;overflow:hidden"><video autoplay loop muted playsinline style="width:100%;display:block" id="blueprintClip"><source src="Clip2_web.mp4" type="video/mp4"></video><p style="text-align:center;font-size:.8rem;color:var(--bone-dim);margin:.6rem 0 0;font-style:italic">A blueprint hologram — place the stand, follow the ghost.</p></div>
+</section>
+<div class="banner"><h2 class="slogan">Secure your supplies</h2></div>
+<section style="padding-top:1.4rem">
+  <p>The world has to be converted to cross over, and the conversion is not perfect. This part needs you to actually do something, so read it twice.</p>
+  <div class="warn"><p><strong>Put everything you care about into a chest before the crossing.</strong></p><p>Builds survive. Chests and everything inside them survive. Your personal inventory does not. Neither does anything alive — named pets, horses in your stable, the villagers you have been trading with. Those we lose. I would rather tell you now than let you find out on the other side.</p></div>
+</section>
+<div class="banner"><h2 class="slogan">The cost of the crossing</h2></div>
+<section style="padding-top:1.4rem">
+  <div class="cost"><h3>Redstone farms may break</h3><p>The two editions handle redstone and mob spawning differently. If you have a finely tuned farm, assume it needs repairing afterwards.</p></div>
+  <div class="cost"><h3>Combat feels different</h3><p>A short cooldown between sword swings instead of spam-clicking. A day to adjust, then you stop noticing.</p></div>
+  <div class="cost"><h3>We update late, together</h3><p>Switch off auto-update for Minecraft on your device. When a big Minecraft update lands we won't get it on day one — I update the server and the crossplay bridge first, then we all move across at once. So new content reaches us a little behind everyone else, rather than half of us being locked out while the other half updated.</p></div>
+  <div class="cost"><h3>Marketplace purchases don't come with us</h3><p>Paid worlds and packs stay on the Marketplace side. Skins are fine.</p></div>
+  <div class="cost"><h3>If the server is down, we are down</h3><p>A Realm is Microsoft's problem. This one is mine, and I am the one you will be complaining to.</p></div>
+</section>
+<div class="banner"><h2 class="slogan">What you do not lose</h2></div>
+<section style="padding-top:1.2rem">
+  <ul class="ledger yes"><li><span class="mk">✓</span><span>Your account, your name, your skin</span></li><li><span class="mk">✓</span><span>Your device — phone, tablet or PC, whatever you use now</span></li><li><span class="mk">✓</span><span>Every build in the world, exactly where you left it</span></li><li><span class="mk">✓</span><span>Your chests and everything in them</span></li><li><span class="mk">✓</span><span>The same people, in the same world</span></li></ul>
+  <ul class="ledger no" style="margin-top:1.3rem"><li><span class="mk">✕</span><span>Buying Minecraft Java — never, not once</span></li><li><span class="mk">✕</span><span>Installing mods to play — there is nothing to install</span></li><li><span class="mk">✕</span><span>Learning anything new to get in</span></li></ul>
+</section>
+<div class="teaser"><p class="liturgy">Vaelorin'da</p><h2 class="slogan">Something is<br>being built</h2><p>About a tenth of it exists so far. It is moving slowly, and it is moving towards a new adventure for all of us.</p></div>
+<div class="ask">
+  <h2 class="slogan">What I am actually asking</h2>
+  <p>Not to migrate. Not to decide anything today.</p>
+  <p>Give me <strong>one month.</strong> The server runs alongside the Realm, and the Realm stays up and untouched the whole time. My brother and I will be on it putting the features through their paces, and you are welcome on it whenever you feel like it — come see the ground move, follow a blueprint, stand somewhere that is finally protected.</p>
+  <p>At the end of the month we decide together whether the Realm gets switched off. If it is still a no by then, it is a no, and I will drop it.</p>
+</div>
+<footer>Questions, objections and "but what about my horse" go in the group chat.</footer>
+</div>
+</body>
+</html>
