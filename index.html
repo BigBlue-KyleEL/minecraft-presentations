@@ -47,11 +47,19 @@ section{padding:2.9rem 0 0}
 .ask{margin-top:2.9rem;border:2px solid var(--gold-dim);padding:1.6rem 1.3rem;background:linear-gradient(180deg,var(--panel),transparent)}
 .ask h2{color:var(--gold)}.ask p:last-child{margin-bottom:0}
 footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);text-align:center;color:var(--bone-dim);font-size:.84rem;font-style:italic}
-.eye-lid{transform-origin:200px 60px;animation:open 1.5s cubic-bezier(.2,.8,.2,1) .3s both}
+.eye-open{animation:blink-open 10s step-end 2.5s infinite}
+.eye-closed{opacity:0;animation:blink-closed 10s step-end 2.5s infinite}
+@keyframes blink-open{
+  0%,3%,5%,7%,42%,44%,100%{opacity:1}
+  1%,5.5%,42.5%{opacity:0}
+}
+@keyframes blink-closed{
+  0%,3%,5%,7%,42%,44%,100%{opacity:0}
+  1%,5.5%,42.5%{opacity:1}
+}
 .glow{animation:kindle 2s ease-out .9s both}
-@keyframes open{from{transform:scaleY(1)}to{transform:scaleY(0)}}
 @keyframes kindle{from{opacity:0}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.eye-lid{animation:none;transform:scaleY(0)}.glow{animation:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.eye-open{animation:none;opacity:1}.eye-closed{animation:none;opacity:0}.glow{animation:none;opacity:1}}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 </head>
@@ -64,8 +72,15 @@ footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);tex
     <circle cx="200" cy="92" r="130" fill="url(#halo)"/>
     <circle cx="200" cy="92" r="86" fill="none" stroke="#6b3fa0" stroke-width="2" stroke-dasharray="5 9"/>
     <circle cx="200" cy="92" r="102" fill="none" stroke="#8d6f2c" stroke-width="1"/>
-    <g class="glow"><path d="M132 60 Q200 6 268 60 Q200 114 132 60 Z" fill="#1c1030" stroke="#e0b344" stroke-width="3"/><circle cx="200" cy="60" r="22" fill="#6b3fa0"/><circle cx="200" cy="60" r="10" fill="#120a1f"/><circle cx="193" cy="52" r="4" fill="#f2ead9" opacity=".85"/></g>
-    <path class="eye-lid" d="M126 8 h148 v106 h-148 Z" fill="#120a1f"/>
+    <g class="glow">
+      <g class="eye-open">
+        <path d="M132 60 Q200 6 268 60 Q200 114 132 60 Z" fill="#1c1030" stroke="#e0b344" stroke-width="3"/>
+        <circle cx="200" cy="60" r="22" fill="#6b3fa0"/>
+        <circle cx="200" cy="60" r="10" fill="#120a1f"/>
+        <circle cx="193" cy="52" r="4" fill="#f2ead9" opacity=".85"/>
+      </g>
+      <path class="eye-closed" d="M132 60 Q200 78 268 60" fill="none" stroke="#e0b344" stroke-width="3" stroke-linecap="round"/>
+    </g>
     <rect x="168" y="196" width="64" height="26" fill="#3a2560"/><rect x="160" y="216" width="80" height="30" fill="#4a2f79"/><rect x="150" y="240" width="100" height="20" fill="#e0b344"/>
     <rect x="146" y="258" width="108" height="66" fill="#6b3fa0"/><rect x="146" y="258" width="108" height="10" fill="#8257bd"/>
     <line x1="174" y1="268" x2="174" y2="324" stroke="#4a2f79" stroke-width="3"/><line x1="202" y1="268" x2="202" y2="324" stroke="#4a2f79" stroke-width="3"/><line x1="230" y1="268" x2="230" y2="324" stroke="#4a2f79" stroke-width="3"/>
