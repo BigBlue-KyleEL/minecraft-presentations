@@ -156,14 +156,14 @@ footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);tex
       eyeClosed.style.opacity='0';
 
       // Schedule next blink with random interval (3-8s)
-      var next=3000+Math.random()*5000;
+      var next=5000+Math.random()*6000;
       setTimeout(blink,next);
     },40+Math.random()*30);
   }
 
   // Wait for glow/kindle animation to finish before starting blinks
   setTimeout(function(){
-    var first=2000+Math.random()*3000;
+    var first=4000+Math.random()*4000;
     setTimeout(blink,first);
   },3000);
 })();
