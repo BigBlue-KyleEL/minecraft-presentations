@@ -47,16 +47,8 @@ section{padding:2.9rem 0 0}
 .ask{margin-top:2.9rem;border:2px solid var(--gold-dim);padding:1.6rem 1.3rem;background:linear-gradient(180deg,var(--panel),transparent)}
 .ask h2{color:var(--gold)}.ask p:last-child{margin-bottom:0}
 footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);text-align:center;color:var(--bone-dim);font-size:.84rem;font-style:italic}
-.eye-open{animation:blink-open 10s step-end 2.5s infinite}
-.eye-closed{opacity:0;animation:blink-closed 10s step-end 2.5s infinite}
-@keyframes blink-open{
-  0%,3%,5%,7%,42%,44%,100%{opacity:1}
-  1%,5.5%,42.5%{opacity:0}
-}
-@keyframes blink-closed{
-  0%,3%,5%,7%,42%,44%,100%{opacity:0}
-  1%,5.5%,42.5%{opacity:1}
-}
+.eye-open{transition:opacity 120ms ease-in}
+.eye-closed{opacity:0;transition:opacity 120ms ease-in}
 .glow{animation:kindle 2s ease-out .9s both}
 @keyframes kindle{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){.eye-open{animation:none;opacity:1}.eye-closed{animation:none;opacity:0}.glow{animation:none;opacity:1}}
@@ -141,5 +133,40 @@ footer{margin-top:2.6rem;padding-top:1.2rem;border-top:1px solid var(--edge);tex
 </div>
 <footer>Questions, objections and "but what about my horse" go in the group chat.</footer>
 </div>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var eyeOpen=document.querySelector('.eye-open');
+  var eyeClosed=document.querySelector('.eye-closed');
+  if(!eyeOpen||!eyeClosed)return;
+
+  function blink(){
+    // Close: fast (120ms ease-in)
+    eyeOpen.style.transition='opacity 120ms ease-in';
+    eyeClosed.style.transition='opacity 120ms ease-in';
+    eyeOpen.style.opacity='0';
+    eyeClosed.style.opacity='1';
+
+    // Hold closed briefly (40-70ms), then open
+    setTimeout(function(){
+      // Open: slightly slower (180ms ease-out)
+      eyeOpen.style.transition='opacity 180ms ease-out';
+      eyeClosed.style.transition='opacity 180ms ease-out';
+      eyeOpen.style.opacity='1';
+      eyeClosed.style.opacity='0';
+
+      // Schedule next blink with random interval (3-8s)
+      var next=3000+Math.random()*5000;
+      setTimeout(blink,next);
+    },40+Math.random()*30);
+  }
+
+  // Wait for glow/kindle animation to finish before starting blinks
+  setTimeout(function(){
+    var first=2000+Math.random()*3000;
+    setTimeout(blink,first);
+  },3000);
+})();
+</script>
 </body>
 </html>
